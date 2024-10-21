@@ -1,36 +1,133 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Rick and Morty Character Explorer
 
-## Getting Started
+Este projeto é uma aplicação web feita com **Next.js** que consome a [API do Rick and Morty](https://rickandmortyapi.com/). O objetivo da aplicação é listar os personagens do Rick and Morty em um layout de grade, com uma página de detalhes para cada personagem.
 
-First, run the development server:
+## Funcionalidades
+
+- Listagem paginada de personagens do Rick and Morty.
+- Exibição de detalhes individuais de cada personagem.
+- Navegação entre páginas dos personagens.
+- Interface responsiva com layout em grade.
+- Modo escuro (dark mode).
+
+## Tecnologias Utilizadas
+
+- **Next.js** - Framework para React que facilita o desenvolvimento de aplicações modernas com renderização híbrida (SSR e SSG).
+- **API do Rick and Morty** - Utilizada para consumir os dados dos personagens.
+- **CSS Customizado** - Em vez de usar Tailwind, a aplicação utiliza CSS customizado para a estilização.
+
+## Pré-requisitos
+
+Certifique-se de ter os seguintes itens instalados na sua máquina:
+
+- **Node.js** (v14 ou superior)
+- **npm** ou **yarn**
+
+## Como Rodar o Projeto
+
+### 1. Clonar o Repositório
+
+Primeiro, clone o repositório para a sua máquina local:
+
+```bash
+git clone https://github.com/seu-usuario/nome-do-repositorio.git
+```
+
+### 2. Instalar Dependências
+
+Navegue até a pasta do projeto e instale as dependências usando `npm` ou `yarn`:
+
+```bash
+cd nome-do-repositorio
+npm install
+# ou
+yarn install
+```
+
+### 3. Executar o Projeto em Ambiente de Desenvolvimento
+
+Para rodar o projeto localmente em modo de desenvolvimento:
 
 ```bash
 npm run dev
-# or
+# ou
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra o navegador e acesse [http://localhost:3000](http://localhost:3000) para ver a aplicação.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 4. Build para Produção
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Para compilar o projeto para produção:
 
-## Learn More
+```bash
+npm run build
+# ou
+yarn build
+```
 
-To learn more about Next.js, take a look at the following resources:
+E para rodar a versão de produção:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm start
+# ou
+yarn start
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Estrutura de Diretórios
 
-## Deploy on Vercel
+Aqui está uma visão geral da estrutura dos arquivos do projeto:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+├── public
+│   └── favicon.ico
+├── src
+│   ├── pages
+│   │   ├── index.tsx        # Página inicial
+│   │   ├── list.tsx         # Página de listagem de personagens
+│   │   └── character
+│   │       └── [id].tsx     # Página de detalhes do personagem
+│   ├── styles
+│   │   └── globals.css      # Estilos globais
+│   └── components           # Componentes reutilizáveis (se houver)
+├── README.md                # Documentação do projeto
+├── package.json             # Dependências do projeto
+└── next.config.js           # Configurações do Next.js
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## API Utilizada
+
+Este projeto consome a [Rick and Morty API](https://rickandmortyapi.com/), que fornece dados completos sobre personagens, locais e episódios do universo de Rick and Morty.
+
+Exemplo de requisição de API utilizada no projeto:
+
+```bash
+GET https://rickandmortyapi.com/api/character?page=1
+```
+
+## Melhorias Futuras
+
+- Adicionar filtros de busca e filtragem de personagens por status, espécie, etc.
+- Implementar paginação mais dinâmica, como "infinite scroll".
+- Melhorar a responsividade e acessibilidade da interface.
+
+## Contribuição
+
+Se você deseja contribuir com este projeto, siga os passos abaixo:
+
+1. **Fork** este repositório.
+2. Crie uma nova branch para suas modificações:
+   ```bash
+   git checkout -b minha-feature
+   ```
+3. Faça um **commit** com suas alterações:
+   ```bash
+   git commit -m 'Minha nova feature'
+   ```
+4. Faça o **push** para a branch:
+   ```bash
+   git push origin minha-feature
+   ```
+5. Abra um **Pull Request**.
+
+---
